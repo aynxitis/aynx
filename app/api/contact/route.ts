@@ -2,8 +2,6 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import type { ContactFormData } from "@/types";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const TO_EMAIL = "blmed.anis@gmail.com";
 const FROM_EMAIL = "Portfolio <onboarding@resend.dev>"; // replace with verified domain later
 
@@ -39,6 +37,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { name, email, subject, message } = body;
 
   if (!name.trim() || !email.trim() || !message.trim()) {
