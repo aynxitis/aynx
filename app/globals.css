@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scroll reveal — toggled by IntersectionObserver in FadeUp.tsx */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
+              transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hamburger → X animation — Tailwind can't target nth-child siblings */
+.hamburger-bar {
+  @apply block w-full h-0.5 bg-fg transition-all duration-300;
+}
+.hamburger.open .hamburger-bar:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.hamburger.open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open .hamburger-bar:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Accent underline on active nav link */
+.nav-link-active::after {
+  content: '';
+  @apply absolute bottom-[-3px] left-0 right-0 h-px bg-accent;
+}
+
+/* Project card top-border reveal */
+.project-card::before {
+  content: '';
+  @apply absolute top-0 left-0 right-0 h-[3px] bg-accent scale-x-0 origin-left transition-transform duration-500;
+}
+.project-card:hover::before {
+  @apply scale-x-100;
+}
