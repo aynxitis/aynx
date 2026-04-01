@@ -16,6 +16,7 @@ export type RealProject = BaseProject & {
   link?: string;
   linkLabel?: string;
   repoLabel?: string;
+  repoLink?: string;
   disabled?: boolean;
   disabledLabel?: string;
 };

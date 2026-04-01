@@ -46,6 +46,7 @@ export const projects: Project[] = [
       "B2B industrial services website. Built the brand from scratch — logo system, dark/light theme, scroll animations, full UI/UX.",
     ],
     stack: ["Next.js", "React", "Supabase", "Brand Design"],
+    repoLabel: "Private repo",
     disabled: true,
     disabledLabel: "Launching soon",
   },

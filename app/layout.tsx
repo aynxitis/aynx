@@ -11,12 +11,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "AYNX — Mohamed Anis Belamri",
+  title: "Mohamed Anis BELAMRI",
   description: "CS student at ESTIN BEJAIA. Building real products. Available for freelance and internships.",
   keywords: ["Mohamed Anis Belamri", "ESTIN", "web developer", "portfolio", "freelance", "internship"],
   authors: [{ name: "Mohamed Anis Belamri" }],
   openGraph: {
-    title: "AYNX — Mohamed Anis Belamri",
+    title: "Mohamed Anis BELAMRI",
     description: "CS student at ESTIN BEJAIA. Building real products.",
     type: "website",
   },

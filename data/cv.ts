@@ -1,7 +1,7 @@
 export const education = [
   {
     name: "ESTIN BEJAIA",
-    date: "2025 — Present",
+    date: "Sep 2025 — Present",
     subtitle: "1CP — Computer Science Preparatory",
   },
   {
