@@ -30,6 +30,8 @@ export const projects: Project[] = [
       "Designed and built from scratch with Next.js 16 and React 19. Server-rendered, fully typed with TypeScript, custom contact form with Resend email integration, and a responsive design system.",
     ],
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    link: "https://github.com/aynxitis/AYNX",
+    linkLabel: "View source →",
     disabled: true,
     disabledLabel: "You're here",
   },
