@@ -27,13 +27,13 @@ export const projects: Project[] = [
     logoSrc: "/logo.svg",
     logoAlt: "aynxitis",
     description: [
-      "Designed and built from scratch with Next.js 16 and React 19. Server-rendered, fully typed with TypeScript, custom contact form with Resend email integration, and a responsive design system.",
+      "Personal portfolio built from scratch with Next.js 16, React 19, TypeScript, and Resend for the contact form.",
     ],
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    link: "https://github.com/aynxitis/AYNX",
-    linkLabel: "View source →",
     disabled: true,
     disabledLabel: "You're here",
+    repoLink: "https://github.com/aynxitis/aynx",
+    repoLabel: "View repo →",
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     logoAlt: "STRATUM",
     badge: "In Progress",
     description: [
-      "B2B industrial services website. Built the brand from scratch — logo system, dark/light theme, scroll animations, full UI/UX.",
+      "Full-stack B2B website for an industrial services company. Includes a dynamic service catalog, contact system, and admin dashboard.",
     ],
     stack: ["Next.js", "React", "Supabase", "Brand Design"],
     repoLabel: "Private repo",

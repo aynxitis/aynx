@@ -88,20 +88,31 @@ export default function ProjectCard({ project, delay }: ProjectCardProps) {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3.5 font-body text-sm font-semibold text-fg/60 hover:text-accent transition-colors"
+          className="mt-3.5 w-fit font-body text-sm font-semibold text-fg/60 hover:text-accent transition-colors"
         >
           {project.linkLabel ?? "View Project →"}
         </a>
       )}
       {project.disabled && (
-        <span className="mt-3.5 font-body text-sm text-fg/30 font-medium">
+        <span className="mt-3.5 font-body text-sm text-accent font-medium">
           {project.disabledLabel}
         </span>
       )}
       {project.repoLabel && (
-        <span className="mt-1.5 font-body text-xs text-fg/20 font-medium tracking-[0.04em] uppercase">
-          {project.repoLabel}
-        </span>
+        project.repoLink ? (
+          <a
+            href={project.repoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1.5 w-fit font-body text-xs text-fg/30 font-medium tracking-[0.04em] hover:text-accent transition-colors"
+          >
+            {project.repoLabel}
+          </a>
+        ) : (
+          <span className="mt-1.5 font-body text-xs text-fg/20 font-medium tracking-[0.04em] uppercase">
+            {project.repoLabel}
+          </span>
+        )
       )}
     </FadeUp>
   );
