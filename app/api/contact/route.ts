@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import type { ContactFormData } from "@/types";
+import { rateLimit } from "@/lib/rate-limit";
 
 const TO_EMAIL = "blmed.anis@gmail.com";
 const FROM_EMAIL = "Portfolio <onboarding@resend.dev>"; // replace with verified domain later
@@ -31,6 +32,22 @@ function isValidBody(body: unknown): body is ValidContactFormData {
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
+  // --- Rate limiting ---
+  const forwarded = request.headers.get("x-forwarded-for");
+  const ip = forwarded?.split(",")[0].trim() ?? "unknown";
+  const { allowed, retryAfterMs } = rateLimit(ip);
+
+  if (!allowed) {
+    const retryAfterSec = Math.ceil((retryAfterMs ?? 0) / 1000);
+    return NextResponse.json(
+      { error: "Too many messages sent. Please try again later." },
+      {
+        status: 429,
+        headers: { "Retry-After": String(retryAfterSec) },
+      },
+    );
+  }
+
   const body: unknown = await request.json().catch(() => null);
 
   if (!isValidBody(body)) {

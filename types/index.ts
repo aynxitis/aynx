@@ -15,6 +15,7 @@ export type RealProject = BaseProject & {
   stack: string[];
   link?: string;
   linkLabel?: string;
+  repoLabel?: string;
   disabled?: boolean;
   disabledLabel?: string;
 };
@@ -30,4 +31,4 @@ export interface ContactFormData {
   message: string;
 }
 
-export type ContactFormStatus = "idle" | "submitting" | "success" | "error";
+export type ContactFormStatus = "idle" | "submitting" | "success" | "error" | "rate_limited";

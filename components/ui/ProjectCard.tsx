@@ -98,6 +98,11 @@ export default function ProjectCard({ project, delay }: ProjectCardProps) {
           {project.disabledLabel}
         </span>
       )}
+      {project.repoLabel && (
+        <span className="mt-1.5 font-body text-xs text-fg/20 font-medium tracking-[0.04em] uppercase">
+          {project.repoLabel}
+        </span>
+      )}
     </FadeUp>
   );
 }

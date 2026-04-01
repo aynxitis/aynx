@@ -14,12 +14,12 @@ export const education = [
 
 export const stack = [
   {
-    category: "Web",
-    skills: ["HTML", "CSS", "Python", "Firebase", "Supabase", "Vercel"],
+    category: "Languages",
+    skills: ["HTML", "CSS", "Python", "C", "x86 NASM"],
   },
   {
-    category: "Systems",
-    skills: ["C", "x86 NASM", "Linux"],
+    category: "Platforms",
+    skills: ["Firebase", "Supabase", "Linux"],
   },
   {
     category: "Tools",

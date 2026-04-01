@@ -41,7 +41,13 @@ export default function Contact() {
         body: JSON.stringify(form),
       });
 
-      setStatus(res.ok ? "success" : "error");
+      if (res.ok) {
+        setStatus("success");
+      } else if (res.status === 429) {
+        setStatus("rate_limited");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -189,6 +195,15 @@ export default function Contact() {
               {status === "error" && (
                 <p className="font-body text-sm text-fg/60">
                   Something went wrong. Email directly:{" "}
+                  <a href="mailto:am_belamri@estin.dz" className="underline hover:text-accent transition-colors">
+                    am_belamri@estin.dz
+                  </a>
+                </p>
+              )}
+
+              {status === "rate_limited" && (
+                <p className="font-body text-sm text-fg/60">
+                  Too many messages sent. Please try again later, or email directly:{" "}
                   <a href="mailto:am_belamri@estin.dz" className="underline hover:text-accent transition-colors">
                     am_belamri@estin.dz
                   </a>

@@ -16,6 +16,7 @@ export const projects: Project[] = [
     stack: ["HTML/CSS", "Vanilla JS", "Firebase", "OAuth", "Vercel"],
     link: "https://findit-estin.vercel.app",
     linkLabel: "View live site →",
+    repoLabel: "Private repo",
   },
   {
     id: 2,
@@ -26,9 +27,9 @@ export const projects: Project[] = [
     logoSrc: "/logo.svg",
     logoAlt: "aynxitis",
     description: [
-      "Personal portfolio website. Clean, minimal design built with Next.js and React.",
+      "Designed and built from scratch with Next.js 16 and React 19. Server-rendered, fully typed with TypeScript, custom contact form with Resend email integration, and a responsive design system.",
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     disabled: true,
     disabledLabel: "You're here",
   },
@@ -40,13 +41,13 @@ export const projects: Project[] = [
     name: "STRATUM",
     logoSrc: "/STRATUM-dark.svg",
     logoAlt: "STRATUM",
-    badge: "On Hold",
+    badge: "In Progress",
     description: [
       "B2B industrial services website. Built the brand from scratch — logo system, dark/light theme, scroll animations, full UI/UX.",
     ],
-    stack: ["Next.js", "React", "Supabase", "Vercel", "Brand Design"],
+    stack: ["Next.js", "React", "Supabase", "Brand Design"],
     disabled: true,
-    disabledLabel: "Coming soon",
+    disabledLabel: "Launching soon",
   },
   {
     id: 4,

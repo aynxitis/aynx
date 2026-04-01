@@ -18,7 +18,7 @@ export default function About() {
             I spend my time bridging the gap between concepts and code by shipping real-world projects.
           </p>
           <p className="font-body text-base text-fg/60 leading-[1.7]">
-            I&apos;m still early in my journey, but I&apos;m obsessed with the process of turning an idea into a functional product.
+            I&apos;m obsessed with the process of turning an idea into a functional, shipped product.
           </p>
           <p className="font-body text-base text-fg/60 leading-[1.7]">
             I&apos;m open to{" "}
