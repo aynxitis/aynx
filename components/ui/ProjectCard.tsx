@@ -57,18 +57,21 @@ export default function ProjectCard({ project, delay }: ProjectCardProps) {
       </h3>
 
       {/* description */}
-      {project.description.map((line, i) => (
-        <p key={i} className="font-body text-sm text-fg/60 leading-relaxed mb-2.5">
-          {line.includes(":") ? (
-            <>
-              <strong className="text-fg font-medium">{line.split(":")[0]}:</strong>
-              {line.split(":").slice(1).join(":")}
-            </>
-          ) : (
-            line
-          )}
-        </p>
-      ))}
+      {project.description.map((line, i) => {
+        const colonIdx = line.indexOf(":");
+        return (
+          <p key={i} className="font-body text-sm text-fg/60 leading-relaxed mb-2.5">
+            {colonIdx !== -1 ? (
+              <>
+                <strong className="text-fg font-medium">{line.slice(0, colonIdx)}:</strong>
+                {line.slice(colonIdx + 1)}
+              </>
+            ) : (
+              line
+            )}
+          </p>
+        );
+      })}
 
       {/* stack */}
       <div className="flex flex-wrap gap-0 mt-auto pt-5 font-body text-xs font-medium tracking-[0.04em] uppercase text-fg/30">

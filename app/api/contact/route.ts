@@ -33,8 +33,11 @@ function isValidBody(body: unknown): body is ValidContactFormData {
 
 export async function POST(request: Request): Promise<NextResponse> {
   // --- Rate limiting ---
-  const forwarded = request.headers.get("x-forwarded-for");
-  const ip = forwarded?.split(",")[0].trim() ?? "unknown";
+  // x-real-ip is set by Vercel's edge and can't be spoofed; fall back to x-forwarded-for
+  const ip =
+    request.headers.get("x-real-ip") ??
+    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    "unknown";
   const { allowed, retryAfterMs } = rateLimit(ip);
 
   if (!allowed) {
@@ -56,6 +59,10 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { name, email, subject, message } = body;
+
+  if (name.length > 100 || email.length > 254 || message.length > 5000) {
+    return NextResponse.json({ error: "Field too long" }, { status: 400 });
+  }
 
   if (!name.trim() || !email.trim() || !message.trim()) {
     return NextResponse.json({ error: "All fields are required" }, { status: 400 });

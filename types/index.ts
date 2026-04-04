@@ -32,4 +32,4 @@ export interface ContactFormData {
   message: string;
 }
 
-export type ContactFormStatus = "idle" | "submitting" | "success" | "error" | "rate_limited";
+export type ContactFormStatus = "idle" | "submitting" | "success" | "error" | "rate_limited" | "missing_subject";

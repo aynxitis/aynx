@@ -40,7 +40,10 @@ export default function Nav() {
     document.querySelectorAll("section[id]").forEach((s) =>
       observerRef.current?.observe(s)
     );
-    return () => observerRef.current?.disconnect();
+    return () => {
+      observerRef.current?.disconnect();
+      setActiveSection("");
+    };
   }, [logoOnly]);
 
   useEffect(() => {
@@ -85,7 +88,7 @@ export default function Nav() {
       </a>
 
       {/* Desktop links */}
-      <ul className="hidden sm:flex items-center gap-8 list-none">
+      <ul className="nav-links hidden sm:flex items-center gap-8 list-none">
         {LINKS.map(({ label, href }) => (
           <li key={href}>
             <a
@@ -102,7 +105,7 @@ export default function Nav() {
 
       {/* Hamburger */}
       <button
-        className={`hamburger ${menuOpen ? "open" : ""} sm:hidden flex flex-col justify-center gap-1 w-5 h-5 bg-transparent border-0 cursor-pointer z-[1001] p-0`}
+        className={`nav-hamburger hamburger ${menuOpen ? "open" : ""} sm:hidden flex flex-col justify-center gap-1 w-5 h-5 bg-transparent border-0 cursor-pointer z-[1001] p-0`}
         onClick={() => setMenuOpen((p) => !p)}
         aria-label="Toggle menu"
         aria-expanded={menuOpen}
@@ -114,7 +117,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <ul
-        className={`sm:hidden absolute top-full inset-x-0 list-none bg-bg/[0.98] backdrop-blur-xl border-b border-fg/[0.12] px-page transition-all duration-300 ease-out-expo ${
+        className={`nav-links sm:hidden absolute top-full inset-x-0 list-none bg-bg/[0.98] backdrop-blur-xl border-b border-fg/[0.12] px-page transition-all duration-300 ease-out-expo ${
           menuOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2.5 invisible"
         }`}
       >

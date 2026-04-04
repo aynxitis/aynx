@@ -1,6 +1,7 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Terms of Use — AYNX",
   description: "Terms of use for the AYNX portfolio website.",
 };

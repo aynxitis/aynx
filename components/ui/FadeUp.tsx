@@ -22,6 +22,11 @@ export default function FadeUp({ children, className, delay = 0 }: FadeUpProps) 
           el.style.transitionDelay = delay ? `${delay}ms` : "";
           el.classList.add("visible");
           observer.unobserve(el);
+          el.addEventListener(
+            "transitionend",
+            () => { el.style.transitionDelay = ""; },
+            { once: true }
+          );
         }
       },
       { threshold: 0.12, rootMargin: "0px 0px -32px 0px" }
