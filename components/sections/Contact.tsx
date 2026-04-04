@@ -21,14 +21,14 @@ export default function Contact() {
   ) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    if (status === "error") setStatus("idle");
+    if (status === "error" || status === "rate_limited" || status === "missing_subject") setStatus("idle");
   }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!form.subject) {
-      setStatus("error");
+      setStatus("missing_subject");
       return;
     }
 
@@ -191,6 +191,12 @@ export default function Contact() {
               >
                 {status === "submitting" ? "Sending…" : "Send message"}
               </button>
+
+              {status === "missing_subject" && (
+                <p className="font-body text-sm text-fg/60">
+                  Please select what you&apos;re reaching out about.
+                </p>
+              )}
 
               {status === "error" && (
                 <p className="font-body text-sm text-fg/60">

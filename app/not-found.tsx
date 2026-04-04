@@ -1,7 +1,8 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import SectionLabel from "@/components/ui/SectionLabel";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "404 Not Found — AYNX",
 };
 
@@ -15,7 +16,7 @@ export default function NotFound() {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-            nav > ul, nav > button { display: none !important; }
+            .nav-links, .nav-hamburger { display: none !important; }
             nav { justify-content: flex-start !important; }
           `,
         }}
