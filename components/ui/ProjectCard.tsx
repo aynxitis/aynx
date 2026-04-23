@@ -91,13 +91,13 @@ export default function ProjectCard({ project, delay }: ProjectCardProps) {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3.5 w-fit font-body text-sm font-semibold text-fg/60 hover:text-accent transition-colors"
+          className="mt-3.5 w-fit font-body text-xs font-semibold tracking-[0.04em] uppercase text-fg/60 hover:text-accent transition-colors"
         >
           {project.linkLabel ?? "View Project →"}
         </a>
       )}
       {project.disabled && (
-        <span className="mt-3.5 font-body text-sm text-accent font-medium">
+        <span className="mt-3.5 font-body text-xs font-medium tracking-[0.04em] uppercase text-fg/30">
           {project.disabledLabel}
         </span>
       )}
@@ -107,7 +107,7 @@ export default function ProjectCard({ project, delay }: ProjectCardProps) {
             href={project.repoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-1.5 w-fit font-body text-xs text-fg/30 font-medium tracking-[0.04em] hover:text-accent transition-colors"
+            className="mt-1.5 w-fit font-body text-xs text-fg/30 font-medium tracking-[0.04em] uppercase hover:text-accent transition-colors"
           >
             {project.repoLabel}
           </a>
