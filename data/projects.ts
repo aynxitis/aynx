@@ -16,8 +16,8 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
     link: "https://findit-estin.vercel.app",
     linkLabel: "View live site →",
-    repoLink: "https://github.com/aynxitis/findit-estin",
-    repoLabel: "View old repo →",
+    repoLink: "https://github.com/aynxitis/findit-v2",
+    repoLabel: "View repo →",
   },
   {
     id: 2,
