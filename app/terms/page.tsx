@@ -30,7 +30,7 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p className="font-body text-sm text-fg/60 leading-[1.7]">
-              By accessing and using this website (aynx.vercel.app), you accept
+              By accessing and using this website (aynx.dev), you accept
               and agree to be bound by these Terms of Use.
             </p>
           </section>
