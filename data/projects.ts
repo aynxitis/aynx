@@ -11,7 +11,7 @@ export const projects: Project[] = [
     logoAlt: "FINDit",
     description: [
       "Problem: ESTIN students had no way to report or claim lost items — the only option was spamming the entire campus by email.",
-      "Built: A campus lost-and-found web app with Google OAuth gated to @estin.dz accounts, real-time Firebase database, deployed on Vercel. Live. Used by real students.",
+      "Built: A campus lost-and-found web app with Google OAuth gated to @estin.dz accounts, real-time Supabase database, deployed on Vercel. Live. Used by real students.",
     ],
     stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
     link: "https://findit-estin.vercel.app",
