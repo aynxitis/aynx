@@ -13,7 +13,7 @@ export default function About() {
             BUILDING PRODUCTS THAT SOLVE REAL PROBLEMS.
           </h3>
           <p className="font-body text-base text-fg/60 leading-[1.7]">
-            I&apos;m currently a first-year student at <strong className="text-fg font-medium">ESTIN</strong>,
+            I&apos;m currently a second-year student at <strong className="text-fg font-medium">ESTIN</strong>,
             diving into the fundamentals of Computer Science. While the curriculum provides the theory,
             I spend my time bridging the gap between concepts and code by shipping real-world projects.
           </p>
@@ -54,7 +54,7 @@ export default function About() {
               extra: null,
             },
             {
-              value: "1CP",
+              value: "2CP",
               label: "@ ESTIN BEJAIA",
               extra: null,
             },
