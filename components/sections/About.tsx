@@ -49,7 +49,7 @@ export default function About() {
         <FadeUp>
           {[
             {
-              value: "18",
+              value: "19",
               label: "Years old",
               extra: null,
             },
