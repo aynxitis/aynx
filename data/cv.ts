@@ -15,11 +15,15 @@ export const education = [
 export const stack = [
   {
     category: "Languages",
-    skills: ["HTML", "CSS", "Python", "C", "x86 NASM"],
+    skills: ["TypeScript", "JavaScript", "Python", "C", "SQL", "x86 NASM", "HTML", "CSS"],
+  },
+  {
+    category: "Frameworks",
+    skills: ["Next.js", "React", "Tailwind CSS", "FastAPI"],
   },
   {
     category: "Platforms",
-    skills: ["Firebase", "Supabase", "Linux"],
+    skills: ["Supabase", "PostgreSQL", "Cloudflare Workers", "Vercel", "Linux"],
   },
   {
     category: "Tools",
@@ -33,4 +37,4 @@ export const languages = [
   { name: "English", level: "Professional" },
 ];
 
-export const learning = ["TypeScript", "Next.js", "Python (Advanced)"];
+export const learning = ["Python (Advanced)"];
