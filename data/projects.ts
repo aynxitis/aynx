@@ -21,7 +21,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    status: "client",
+    status: "live",
     label: "Client Project",
     year: 2026,
     name: "Arco",
@@ -32,21 +32,6 @@ export const projects: Project[] = [
     ],
     stack: ["Next.js", "TypeScript", "Cloudflare Workers", "Resend"],
     link: "https://arcoindustrial.ca",
-    linkLabel: "View live site →",
-    repoLabel: "Private repo",
-  },
-  {
-    id: 4,
-    status: "live",
-    label: "Team Project",
-    year: 2026,
-    name: "Touchstone",
-    badge: "In Progress",
-    description: [
-      "Paste an AI research report from Perplexity, ChatGPT or Gemini, and Touchstone checks whether each cited source actually says what the claim attributes to it. It audits citation accuracy, not whether the source itself is right.",
-    ],
-    stack: ["Python", "FastAPI", "LLM APIs"],
-    link: "https://touchstone.aynx.dev",
     linkLabel: "View live site →",
     repoLabel: "Private repo",
   },
@@ -66,5 +51,9 @@ export const projects: Project[] = [
     disabledLabel: "You're here",
     repoLink: "https://github.com/aynxitis/aynx",
     repoLabel: "View repo →",
+  },
+  {
+    id: 4,
+    isEmpty: true,
   },
 ];
